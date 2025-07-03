@@ -10,44 +10,49 @@ void Menu(string name, DateTime date)
 {
     Console.WriteLine("------------------------------------------");
     Console.WriteLine($"Hello {name.ToUpper()}. It's {date.DayOfWeek}. Welcome to Math Game\n");
-    Console.WriteLine(@$"Choose what to play: 
+
+    bool isOn = true;
+
+    do
+    {
+        Console.WriteLine(@$"Choose what to play: 
 A - Addition
 S - Substraction
 M - Multiplication
 D - Division
 Q - Quit the program");
-    Console.WriteLine("------------------------------------------");
+        Console.WriteLine("------------------------------------------");
 
-    var select = Console.ReadLine();
+        var select = Console.ReadLine();
 
-    switch (select.Trim().ToLower())
-    {
-        case "a":
-            AdditionGame("Addition Game");
-            break;
-        case "s":
-            SubstractionGame("Substraction Game");
-            break;
-        case "m":
-            MultiplicationGame("Multiplication Game");
-            break;
-        case "d":
-            DivisionGame("Division Game");
-            break;
-        case "q":
-            Console.WriteLine("Bye");
-            Environment.Exit(1);
-            break;
-        default:
-            Console.WriteLine("Invalid Input");
-            Environment.Exit(1);
-            break;
-    }
+        switch (select.Trim().ToLower())
+        {
+            case "a":
+                AdditionGame("Addition Game");
+                break;
+            case "s":
+                SubstractionGame("Substraction Game");
+                break;
+            case "m":
+                MultiplicationGame("Multiplication Game");
+                break;
+            case "d":
+                DivisionGame("Division Game");
+                break;
+            case "q":
+                Console.WriteLine("Bye");
+                Environment.Exit(1);
+                break;
+            default:
+                Console.WriteLine("Invalid Input");
+                isOn = false;
+                break;
+        }
+    } while (isOn);
 }
 
 void AdditionGame(string message)
 {
-    Console.WriteLine(message);
     var random = new Random();
     
     int firstNum;
@@ -56,6 +61,9 @@ void AdditionGame(string message)
 
     for (int i = 0; i < 5; i++)
     {
+        Console.Clear();
+        Console.WriteLine(message);
+
         firstNum = random.Next(0, 9);
         secondNum = random.Next(0, 9);
 
@@ -75,13 +83,13 @@ void AdditionGame(string message)
         }
     }
 
-    Console.WriteLine($"Your score is {score}");
+    Console.WriteLine($"Your score is {score}. Press Enter to go back to Menu");
+    Console.ReadLine();
 
 }
 
 void SubstractionGame(string message)
 {
-    Console.WriteLine(message);
     var random = new Random();
 
     int firstNum;
@@ -90,6 +98,9 @@ void SubstractionGame(string message)
 
     for (int i = 0; i < 5; i++)
     {
+        Console.Clear();
+        Console.WriteLine(message);
+
         firstNum = random.Next(0, 9);
         secondNum = random.Next(0, 9);
 
@@ -109,12 +120,12 @@ void SubstractionGame(string message)
         }
     }
 
-    Console.WriteLine($"Your score is {score}");
+    Console.WriteLine($"Your score is {score}. Press Enter to go back to Menu");
+    Console.ReadLine();
 }
 
 void MultiplicationGame(string message)
 {
-    Console.WriteLine(message);
     var random = new Random();
 
     int firstNum;
@@ -123,6 +134,7 @@ void MultiplicationGame(string message)
 
     for (int i = 0; i < 5; i++)
     {
+        
         firstNum = random.Next(0, 9);
         secondNum = random.Next(0, 9);
 
@@ -142,7 +154,8 @@ void MultiplicationGame(string message)
         }
     }
 
-    Console.WriteLine($"Your score is {score}");
+    Console.WriteLine($"Your score is {score}. Press Enter to go back to Menu");
+    Console.ReadLine();
 }
 
 void DivisionGame(string message)
@@ -172,7 +185,8 @@ void DivisionGame(string message)
         }
     }
 
-    Console.WriteLine($"Your score is {score}");
+    Console.WriteLine($"Your score is {score}. Press Enter to go back to Menu");
+    Console.ReadLine();
 
 }
 
