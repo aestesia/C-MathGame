@@ -64,16 +64,18 @@ void AdditionGame(string message)
 
         if (int.Parse(result) == firstNum + secondNum)
         {
-            Console.WriteLine("Correct");
+            Console.WriteLine("Correct. Press enter to Continue");
             score++;
+            Console.ReadLine();
         }
         else
         {
-            Console.WriteLine("Incorrect");
+            Console.WriteLine("Incorrect. Press enter to Continue");
+            Console.ReadLine();
         }
     }
 
-    Console.WriteLine($"You answered correctly {score} out of 5");
+    Console.WriteLine($"Your score is {score}");
 
 }
 
@@ -96,16 +98,18 @@ void SubstractionGame(string message)
 
         if (int.Parse(result) == firstNum - secondNum)
         {
-            Console.WriteLine("Correct");
+            Console.WriteLine("Correct. Press enter to Continue");
             score++;
+            Console.ReadLine();
         }
         else
         {
-            Console.WriteLine("Incorrect");
+            Console.WriteLine("Incorrect. Press enter to Continue");
+            Console.ReadLine();
         }
     }
 
-    Console.WriteLine($"You answered correctly {score} out of 5");
+    Console.WriteLine($"Your score is {score}");
 }
 
 void MultiplicationGame(string message)
@@ -127,20 +131,67 @@ void MultiplicationGame(string message)
 
         if (int.Parse(result) == firstNum * secondNum)
         {
-            Console.WriteLine("Correct");
+            Console.WriteLine("Correct. Press enter to Continue");
             score++;
+            Console.ReadLine();
         }
         else
         {
-            Console.WriteLine("Incorrect");
+            Console.WriteLine("Incorrect. Press enter to Continue");
+            Console.ReadLine();
         }
     }
 
-    Console.WriteLine($"You answered correctly {score} out of 5");
+    Console.WriteLine($"Your score is {score}");
 }
 
 void DivisionGame(string message)
-{
-    Console.WriteLine(message);
+{   
+    for (int i = 0; i < 5; i++) 
+    {
+        Console.Clear();
+        Console.WriteLine(message);
+        
+        var divisionNumbers = GetDivisionNumbers();
+        int firstNum = divisionNumbers[0];
+        int secondNum = divisionNumbers[1];
+
+        Console.WriteLine($"{firstNum} / {secondNum}");
+        var result = Console.ReadLine();
+
+        if (int.Parse(result) == firstNum / secondNum)
+        {
+            Console.WriteLine("Correct. Press enter to Continue");
+            score++;
+            Console.ReadLine();
+        }
+        else
+        {
+            Console.WriteLine("Incorrect. Press enter to Continue");
+            Console.ReadLine();
+        }
+    }
+
+    Console.WriteLine($"Your score is {score}");
+
 }
 
+int[] GetDivisionNumbers()
+{
+    var random = new Random();
+    int firstNum = random.Next(1, 99);
+    int secondNum = random.Next(1, 99);
+    
+    var result = new int[2];
+
+    while (firstNum % secondNum != 0)
+    {
+        firstNum = random.Next(1, 99);
+        secondNum = random.Next(1, 99);
+    }
+
+    result[0] = firstNum;
+    result[1] = secondNum;
+
+    return result;
+}
