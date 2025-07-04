@@ -41,7 +41,7 @@ Q - Quit the program");
                         engine.DivisionGame("Division Game");
                         break;
                     case "v":
-                        Helpers.GetScores();
+                        Helpers.PrintScores();
                         break;
                     case "q":
                         Console.WriteLine("Bye");
