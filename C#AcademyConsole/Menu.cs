@@ -1,4 +1,4 @@
-﻿using C_AcademyConsole;
+﻿using C_MathGame;
 
 namespace C_MathGame
 {
@@ -7,13 +7,17 @@ namespace C_MathGame
         GameEngine engine = new GameEngine();
         internal void ShowMenu(string name, DateTime date)
         {
+            Console.Clear();
+            Console.WriteLine($"Hello {name.ToUpper()}. It's {date.DayOfWeek}. Welcome to Math Game\n");
+            Console.WriteLine("Press enter to continue");
+            Console.ReadLine();
+            Console.WriteLine("\n");
+
             bool isOn = true;
 
             do
             {
                 Console.Clear();
-                Console.WriteLine("------------------------------------------");
-                Console.WriteLine($"Hello {name.ToUpper()}. It's {date.DayOfWeek}. Welcome to Math Game\n");
                 Console.WriteLine("------------------------------------------");
                 Console.WriteLine(@$"Choose what to play: 
 A - Addition

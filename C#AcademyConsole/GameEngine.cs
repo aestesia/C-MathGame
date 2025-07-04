@@ -1,7 +1,7 @@
 ﻿
-using C_AcademyConsole.Models;
+using C_MathGame.Models;
 
-namespace C_AcademyConsole
+namespace C_MathGame
 {
     internal class GameEngine
     {
@@ -23,6 +23,8 @@ namespace C_AcademyConsole
 
                 Console.WriteLine($"{firstNum} + {secondNum}");
                 var result = Console.ReadLine();
+
+                result = Helpers.ValidateResult(result);
 
                 if (int.Parse(result) == firstNum + secondNum)
                 {
@@ -62,6 +64,8 @@ namespace C_AcademyConsole
                 Console.WriteLine($"{firstNum} - {secondNum}");
                 var result = Console.ReadLine();
 
+                result = Helpers.ValidateResult(result);
+
                 if (int.Parse(result) == firstNum - secondNum)
                 {
                     Console.WriteLine("Correct. Press enter to Continue");
@@ -91,12 +95,16 @@ namespace C_AcademyConsole
 
             for (int i = 0; i < 5; i++)
             {
+                Console.Clear();
+                Console.WriteLine(message);
 
                 firstNum = random.Next(0, 9);
                 secondNum = random.Next(0, 9);
 
                 Console.WriteLine($"{firstNum} * {secondNum}");
                 var result = Console.ReadLine();
+
+                result = Helpers.ValidateResult(result);
 
                 if (int.Parse(result) == firstNum * secondNum)
                 {
@@ -132,6 +140,8 @@ namespace C_AcademyConsole
 
                 Console.WriteLine($"{firstNum} / {secondNum}");
                 var result = Console.ReadLine();
+
+                result = Helpers.ValidateResult(result);
 
                 if (int.Parse(result) == firstNum / secondNum)
                 {

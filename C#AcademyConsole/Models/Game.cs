@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace C_AcademyConsole.Models;
+namespace C_MathGame.Models;
 
 internal class Game
 {
