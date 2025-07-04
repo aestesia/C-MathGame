@@ -13,5 +13,13 @@ internal class Game
     //} another way to make getter & setter
     public DateTime Date { get; set; }
     public int Score { get; set; }
-    public string Type { get; set; }
+    public GameType Type { get; set; }
+}
+
+internal enum GameType
+{
+    Addition,
+    Substraction,
+    Multiplication,
+    Division
 }

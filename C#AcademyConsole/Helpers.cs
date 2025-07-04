@@ -39,7 +39,7 @@ namespace C_AcademyConsole
             return result;
         }
         
-        internal static void AddToHistory(int score, string gameType)
+        internal static void AddToHistory(int score, GameType gameType)
         {
             games.Add(new Game
             {

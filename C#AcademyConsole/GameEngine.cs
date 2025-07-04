@@ -1,4 +1,6 @@
 ﻿
+using C_AcademyConsole.Models;
+
 namespace C_AcademyConsole
 {
     internal class GameEngine
@@ -38,7 +40,7 @@ namespace C_AcademyConsole
             Console.WriteLine($"Your score is {score}. Press Enter to return to Menu");
             Console.ReadLine();
 
-            Helpers.AddToHistory(score, "Addition");
+            Helpers.AddToHistory(score, GameType.Addition);
         }
 
         internal void SubstractionGame(string message)
@@ -76,7 +78,7 @@ namespace C_AcademyConsole
             Console.WriteLine($"Your score is {score}. Press Enter to return to Menu");
             Console.ReadLine();
 
-            Helpers.AddToHistory(score, "Substraction");
+            Helpers.AddToHistory(score, GameType.Substraction);
         }
 
         internal void MultiplicationGame(string message)
@@ -112,7 +114,7 @@ namespace C_AcademyConsole
             Console.WriteLine($"Your score is {score}. Press Enter to return to Menu");
             Console.ReadLine();
 
-            Helpers.AddToHistory(score, "Multiplication");
+            Helpers.AddToHistory(score, GameType.Multiplication);
         }
 
         internal void DivisionGame(string message)
@@ -147,7 +149,7 @@ namespace C_AcademyConsole
             Console.WriteLine($"Your score is {score}. Press Enter to return to Menu");
             Console.ReadLine();
 
-            Helpers.AddToHistory(score, "Division");
+            Helpers.AddToHistory(score, GameType.Division);
 
         }
     }
