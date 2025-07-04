@@ -78,7 +78,7 @@ namespace C_AcademyConsole
             Console.WriteLine($"Your score is {score}. Press Enter to return to Menu");
             Console.ReadLine();
 
-            Helpers.AddToHistory(score, GameType.Substraction);
+            Helpers.AddToHistory(score, GameType.Subtraction);
         }
 
         internal void MultiplicationGame(string message)
